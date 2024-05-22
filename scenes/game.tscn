@@ -1,10 +1,11 @@
-[gd_scene load_steps=12 format=3 uid="uid://cd22wontf73tl"]
+[gd_scene load_steps=13 format=3 uid="uid://cd22wontf73tl"]
 
 [ext_resource type="PackedScene" uid="uid://csx47rcnncr8v" path="res://scenes/player.tscn" id="1_d8drv"]
 [ext_resource type="Texture2D" uid="uid://8pu6cy6kilqq" path="res://assets/sprites/world_tileset.png" id="2_vo8mb"]
 [ext_resource type="PackedScene" uid="uid://dgc44kttnptk0" path="res://scenes/platform.tscn" id="3_jfeyn"]
 [ext_resource type="PackedScene" uid="uid://ctbalgu6qufyd" path="res://scenes/coin.tscn" id="4_77rly"]
 [ext_resource type="PackedScene" uid="uid://sjhlka8jjhwi" path="res://scenes/killzone.tscn" id="5_nb6lf"]
+[ext_resource type="PackedScene" uid="uid://bc6nldolb67js" path="res://scenes/slime.tscn" id="6_i3e3o"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_qr5wp"]
 texture = ExtResource("2_vo8mb")
@@ -410,6 +411,22 @@ sources/0 = SubResource("TileSetAtlasSource_qr5wp")
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_obm1k"]
 
+[sub_resource type="Animation" id="Animation_be3e8"]
+length = 1.5
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(336, 21), Vector2(449, 21)]
+}
+
 [sub_resource type="Animation" id="Animation_wkbwc"]
 resource_name = "move"
 length = 1.5
@@ -425,22 +442,6 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Vector2(336, 21), Vector2(433, 21)]
-}
-
-[sub_resource type="Animation" id="Animation_be3e8"]
-length = 1.5
-loop_mode = 2
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 1.5),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(336, 21), Vector2(449, 21)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_l6p3w"]
@@ -541,3 +542,6 @@ libraries = {
 "": SubResource("AnimationLibrary_l6p3w")
 }
 autoplay = "RESET"
+
+[node name="Slime" parent="." instance=ExtResource("6_i3e3o")]
+position = Vector2(40, 49)
