@@ -20,7 +20,6 @@ func _physics_process(delta):
 	if is_on_floor():
 		timer.start()
 	
-	print(timer.time_left)
 	if Input.is_action_just_pressed("jump") and timer.time_left > 0:
 		velocity.y = JUMP_VELOCITY
 
