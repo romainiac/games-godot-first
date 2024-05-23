@@ -564,7 +564,7 @@ libraries = {
 autoplay = "RESET"
 
 [node name="Slime" parent="." instance=ExtResource("6_i3e3o")]
-position = Vector2(40, 49)
+position = Vector2(38, 45)
 
 [node name="Labels" type="Node2D" parent="."]
 
